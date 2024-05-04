@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "y0jZJ5Vn//o7XP5bUd8Qj9i1V3jp6SUrxge2vq25uIY=",
+  "Source": "VirtualAccount-SquadWebApi",
+  "BasePath": "_content/VirtualAccount-SquadWebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
