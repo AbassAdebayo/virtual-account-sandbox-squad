@@ -1,19 +1,20 @@
 
-[ApiController]
-[Route("[virtual/create]")]
-public class CreatVirtualAccountController : ControllerBase
+using Microsoft.AspNetCore.Mvc;
+using System.Text;
+
+[Route("api/create")]
+public class CreateVirtualAccountController : ControllerBase
 {
     private readonly IHttpClientFactory _clientFactory;
-    private readonly ILogger<CreatVirtualAccountController> _logger;
 
 
-    public VirtualAccountController(ILogger<CreatVirtualAccountController> logger, IHttpClientFactory clientFactory)
+    public CreateVirtualAccountController(IHttpClientFactory clientFactory)
     {
         _clientFactory = clientFactory;
-        _logger = logger;
+        
     }
 
-    [HttpPost]
+    [HttpPost("virtual/create-account")]
     public async Task<IActionResult> CreateVirtualAccount([FromBody] VirtualAccountRequest request)
     {
         // Prepare the JSON request body
@@ -26,7 +27,7 @@ public class CreatVirtualAccountController : ControllerBase
         var apiUrl = "https://sandbox-api-d.squadco.com/virtual-account";
 
         // Set the authorization header
-        client.DefaultRequestHeaders.Add("Authorization", "sandbox_sk_bc74f1c3029ae493ed826988f56e1c337e2e806f989f");
+        client.DefaultRequestHeaders.Add("Authorization", "");
 
         // Create the HTTP request content
         var content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
